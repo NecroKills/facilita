@@ -1,3 +1,4 @@
+<!-- Gera matriz de modo aleatorio. -->
 <?php
 	for($i = 0; $i < 5; $i++) {
 		for($j = 0; $j < 5; $j++) {
@@ -6,6 +7,7 @@
 	}
 ?>
 
+<!-- Imprime a matriz -->
 <table>
 	<?php
 		echo "MATRIZ GERADA";
@@ -21,6 +23,7 @@
 
 <br/><br/>
 
+<!-- separa os numeros pares da matriz gerada e imprime a matriz par -->
 <table>
 	<?php
 		echo "MATRIZ NÚMEROS PARES";
@@ -39,6 +42,7 @@
 
 <br/><br/>
 
+<!-- separa os numeros impares da matriz gerada e imprime a matriz impar -->
 <table>
 	<?php
 	 echo "MATRIZ NÚMEROS IMPARES";
