@@ -1,0 +1,8 @@
+Olá,
+
+O exercicio numero 1 foi realizado em php utilizando orientação a objetos.
+O exercicio numero 2 foi realizado em angular 7. 
+"Para rodar é só entrar na pasta e da um npm install e para executar o comando ng serve --open"
+O exercicio numero 3 foi realizado em php.
+
+Att.

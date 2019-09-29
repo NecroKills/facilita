@@ -1,0 +1,60 @@
+<div class="container mt-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">BIBLIOTECA</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h2>Emprestimo de livro</h2>
+      <form>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Nome do Livro</label>
+            </div>
+            <input class="" type="text" name="livro" id="inputLivro" [(ngModel)]="emprestimo.nomeLivro" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Tipo do Usuário</label>
+            </div>
+            <select class="custom-select" id="inputTipoUsuario" name="tipoUsuario"
+              [(ngModel)]="emprestimo.tipoUsuario" required>
+              <option [ngValue]="tipoUsuario" *ngFor="let tipoUsuario of tiposUsuarios;">{{tipoUsuario.descricao}}</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#reciboEmprestimo"
+          [disabled]="!emprestimo.tipoUsuario || !emprestimo.nomeLivro">Concluir</button>
+        <button type="button" class="btn btn-default ml-2" (click)="limparCampos()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="reciboEmprestimo" tabindex="-1" role="dialog" aria-labelledby="reciboEmprestimo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reciboEmprestimo">Recibo Empréstimo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Nome do Livro: {{emprestimo.nomeLivro}}<br/>
+        Tipo de Usuário: {{emprestimo.tipoUsuario?.descricao}}<br/>
+        Dias de Empréstimo: {{emprestimo.tipoUsuario?.diasEmprestimo}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="limparCampos()" data-dismiss="modal">Sair</button>
+      </div>
+    </div>
+  </div>
+</div>
